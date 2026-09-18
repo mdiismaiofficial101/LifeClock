@@ -1,1 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Life Clock - Cybro Technology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+            --text-main: #0F172A;
+            --text-body: #334155;
+            --text-muted: #64748B;
+            --glass-bg: rgba(255, 255, 255, 0.78);
+            --glass-border: rgba(255, 255, 255, 0.85);
+            --card-shadow: 0 20px 50px -12px rgba(99, 102, 241, 0.12), 0 0 1px 1px rgba(255, 255, 255, 0.9);
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: #0B0F19;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Animated Mesh Background */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background: #F8FAFC;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.65;
+            animation: float 14s ease-in-out infinite alternate;
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: #C7D2FE;
+            top: -100px;
+            left: -100px;
+        }
+
+        .blob-2 {
+            width: 550px;
+            height: 550px;
+            background: #FBCFE8;
+            bottom: -150px;
+            right: -100px;
+            animation-duration: 18s;
+            animation-direction: alternate-reverse;
+        }
+
+        .blob-3 {
+            width: 400px;
+            height: 400px;
+            background: #DDD6FE;
+            top: 40%;
+            left: 55%;
+            animation-duration: 16s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(40px, -50px) scale(1.08); }
+            100% { transform: translate(-30px, 40px) scale(0.95); }
+        }
+
+        /* Glassmorphism Main Card */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 920px;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
+            padding: 56px 48px;
+            box-shadow: var(--card-shadow);
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header Styling */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #4F46E5;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .app-badge:hover {
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .company-subtitle {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-body);
+            margin-bottom: 6px;
+        }
+
+        .effective-date {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Modern Language Switcher */
+        .lang-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            padding: 8px;
+            background: rgba(241, 245, 249, 0.85);
+            border-radius: 20px;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .lang-btn:hover {
+            color: #4F46E5;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .lang-btn.active {
+            background: #FFFFFF;
+            color: #4F46E5;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.16);
+            transform: scale(1.02);
+        }
+
+        /* Policy Dynamic Sections */
+        .policy-section {
+            display: none;
+        }
+
+        .policy-section.active {
+            display: block;
+            animation: fadeInTab 0.4s ease-out forwards;
+        }
+
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 36px 0 14px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        p, li {
+            color: var(--text-body);
+            font-size: 15.5px;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        ul {
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Glass Feature Card */
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(236, 72, 153, 0.04) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 20px;
+            padding: 22px 26px;
+            margin: 28px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.05);
+        }
+
+        .highlight-card .icon {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        .highlight-card p {
+            margin: 0;
+            font-weight: 500;
+            color: #1E293B;
+            font-size: 15px;
+        }
+
+        .meta-card {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            border-radius: 20px;
+            padding: 24px;
+            margin-top: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .meta-card p {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .meta-card strong {
+            color: var(--text-main);
+        }
+
+        .meta-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .meta-card a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 56px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(226, 232, 240, 0.8);
+            text-align: center;
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        /* RTL support for Arabic */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Noto Sans Arabic', Tahoma, sans-serif;
+        }
+
+        .rtl .highlight-card {
+            border-left: 1px solid rgba(99, 102, 241, 0.25);
+            border-right: 4px solid var(--primary);
+        }
+
+        .rtl ul {
+            padding-left: 0;
+            padding-right: 24px;
+        }
+
+        @media (max-width: 680px) {
+            .container { padding: 32px 22px; border-radius: 24px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 18px; }
+            .lang-nav { gap: 6px; padding: 6px; }
+            .lang-btn { padding: 8px 12px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="ambient-glow">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+</div>
+
+<div class="container">
+    <div class="header">
+        <div class="app-badge">⏳ Life Clock Mobile App</div>
+        <h1 id="main-title">Privacy Policy</h1>
+        <p class="company-subtitle">Cybro Technology • Developed by MD Ismail</p>
+        <p class="effective-date" id="main-date">Last Updated: September 18, 2026</p>
+    </div>
+
+    <!-- Interactive Language Switcher -->
+    <div class="lang-nav">
+        <button class="lang-btn active" onclick="switchLang('en', this)">English</button>
+        <button class="lang-btn" onclick="switchLang('zh', this)">简体中文 (Chinese)</button>
+        <button class="lang-btn" onclick="switchLang('ru', this)">Русский (Russian)</button>
+        <button class="lang-btn" onclick="switchLang('ja', this)">日本語 (Japanese)</button>
+        <button class="lang-btn" onclick="switchLang('ko', this)">한국어 (Korean)</button>
+        <button class="lang-btn" onclick="switchLang('ar', this)">العربية (Arabic)</button>
+    </div>
+
+    <!-- 1. ENGLISH -->
+    <div id="lang-en" class="policy-section active">
+        <div class="highlight-card">
+            <span class="icon">🛡️</span>
+            <p><strong>Offline-First Privacy Guarantee:</strong> Life Clock by <strong>Cybro Technology</strong> is completely offline-first. Your personal data never leaves your device and is never uploaded to any remote server or cloud.</p>
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>Welcome to <strong>Life Clock</strong> ("the App"), developed by <strong>MD Ismail</strong> and published by <strong>Cybro Technology</strong> ("we", "us", or "our"). We are committed to safeguarding your personal privacy. This Privacy Policy details how data is handled entirely locally on your Android device.</p>
+
+        <h2>2. Data We Process & Local Storage</h2>
+        <p>To calculate live life statistics, age milestones, and countdown notifications, the App processes user-supplied details locally:</p>
+        <ul>
+            <li><strong>Personal Details:</strong> Your Name, Date of Birth, and Time of Birth.</li>
+            <li><strong>Demographic Metrics:</strong> Country of residence and estimated life expectancy.</li>
+            <li><strong>Loved Ones & Family:</strong> Names, relationships, and birthdates you choose to add.</li>
+            <li><strong>Profile Pictures:</strong> Images you pick from your device's photo gallery.</li>
+        </ul>
+        <p><strong>Complete Local Isolation:</strong> All data is stored in a private Room SQLite database on your device. Selected photos are compressed and stored strictly inside the App's sandboxed storage directory.</p>
+
+        <h2>3. Permissions & System Access</h2>
+        <ul>
+            <li><strong>POST_NOTIFICATIONS (Android 13+):</strong> Used solely to deliver daily motivational quotes and scheduled birthday reminders.</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Re-arms your scheduled notification alarms and updates the home-screen widget after your phone restarts.</li>
+            <li><strong>VIBRATE:</strong> Provides gentle tactile feedback when alerts arrive.</li>
+            <li><strong>Zero-Permission Photo Selection:</strong> We utilize Android’s official Photo Picker, which does not require any storage read permissions.</li>
+        </ul>
+
+        <h2>4. Zero Third-Party Sharing & No Ads</h2>
+        <p><strong>Cybro Technology</strong> does not embed any advertising SDKs, tracking frameworks, or third-party analytics. We do not collect device advertising identifiers (GAID) or sell data to anyone.</p>
+
+        <h2>5. Complete User Control & Data Deletion</h2>
+        <ul>
+            <li>You can edit or delete individual records at any time within the App.</li>
+            <li>You can clear all stored records with one tap via <strong>Settings &gt; Reset All Data</strong>.</li>
+            <li>Uninstalling the App instantly and irreversibly removes all data from your device.</li>
+        </ul>
+
+        <h2>6. Developer & Company Contact</h2>
+        <div class="meta-card">
+            <p><strong>Company:</strong> Cybro Technology</p>
+            <p><strong>Lead Developer:</strong> MD Ismail</p>
+            <p><strong>Official Support Email:</strong> <a href="mailto:cybrotechnology1@gmail.com">cybrotechnology1@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- 2. SIMPLIFIED CHINESE -->
+    <div id="lang-zh" class="policy-section">
+        <div class="highlight-card">
+            <span class="icon">🛡️</span>
+            <p><strong>离线隐私承诺：</strong> 由 <strong>Cybro Technology</strong> 打造的 Life Clock（生命时钟）是一款 100% 离线优先应用。您的个人数据绝不会离开您的设备，也不会上传至任何云端或第三方服务器。</p>
+        </div>
+
+        <h2>1. 概述</h2>
+        <p>欢迎使用由 <strong>MD Ismail</strong> 开发、<strong>Cybro Technology</strong> 发布的 <strong>Life Clock</strong>。我们严格保护用户隐私。本政策旨在说明数据在您设备上的本地处理规则。</p>
+
+        <h2>2. 数据处理与本地存储</h2>
+        <p>为了呈现精确的生命进度统计、年龄分析与重要纪念日倒计时，应用处理以下信息：</p>
+        <ul>
+            <li><strong>个人基本资料：</strong> 姓名、出生日期、出生时间。</li>
+            <li><strong>统计指标：</strong> 居住国家及预期寿命。</li>
+            <li><strong>亲友档案：</strong> 您主动添加的亲友姓名及生日。</li>
+            <li><strong>头像照片：</strong> 您从手机相册中自主选取的照片。</li>
+        </ul>
+        <p><strong>纯本地安全存储：</strong> 所有信息仅保存在您手机本地的 Room SQLite 数据库中。照片仅存放于应用的独立私有沙盒目录中，绝不进行外部云端同步。</p>
+
+        <h2>3. 系统权限调用说明</h2>
+        <ul>
+            <li><strong>POST_NOTIFICATIONS（通知）：</strong> 仅用于向您发送日常励志格言及生日提醒。</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED（开机广播）：</strong> 确保手机重启后，提醒闹钟与桌面小组件能自动恢复。</li>
+            <li><strong>VIBRATE（振动）：</strong> 提供提醒到来时的轻微震动反馈。</li>
+            <li><strong>照片选择器：</strong> 采用安卓官方安全 Photo Picker，无需申请读取外部存储权限。</li>
+        </ul>
+
+        <h2>4. 无第三方共享与追踪</h2>
+        <p><strong>Cybro Technology</strong> 不在应用中内置任何广告 SDK、追踪分析工具或用户画像机制。我们绝不出售或商业化任何用户数据。</p>
+
+        <h2>5. 数据删除与控制</h2>
+        <p>您随时可通过 <strong>设置 &gt; 清除所有数据</strong> 一键彻底清除本地所有记录。卸载应用即可彻底销毁所有数据。</p>
+
+        <h2>6. 开发者与企业信息</h2>
+        <div class="meta-card">
+            <p><strong>公司名称：</strong> Cybro Technology</p>
+            <p><strong>主开发者：</strong> MD Ismail</p>
+            <p><strong>官方支持邮箱：</strong> <a href="mailto:cybrotechnology1@gmail.com">cybrotechnology1@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- 3. RUSSIAN -->
+    <div id="lang-ru" class="policy-section">
+        <div class="highlight-card">
+            <span class="icon">🛡️</span>
+            <p><strong>Гарантия автономности:</strong> Приложение Life Clock от компании <strong>Cybro Technology</strong> работает на 100% офлайн. Ваши персональные данные никогда не передаются на внешние серверы.</p>
+        </div>
+
+        <h2>1. Введение</h2>
+        <p>Добро пожаловать в <strong>Life Clock</strong>, разработанное <strong>MD Ismail</strong> и опубликованное компанией <strong>Cybro Technology</strong>. Мы строго обеспечиваем защиту вашей конфиденциальности и локальное хранение данных.</p>
+
+        <h2>2. Обработка и локальное хранение данных</h2>
+        <p>Для расчета времени жизни, статистики и напоминаний о днях рождения используются:</p>
+        <ul>
+            <li><strong>Личные данные:</strong> имя, дата и точное время рождения.</li>
+            <li><strong>Демографические параметры:</strong> страна проживания и средняя продолжительность жизни.</li>
+            <li><strong>Данные близких:</strong> имена и дни рождения ваших родных.</li>
+            <li><strong>Фото профиля:</strong> выбранное вами изображение из галереи.</li>
+        </ul>
+        <p><strong>Полная локальная изоляция:</strong> Все данные хранятся только в локальной базе Room SQLite на вашем устройстве, а фотографии — в изолированной внутренней директории приложения.</p>
+
+        <h2>3. Разрешения системы</h2>
+        <ul>
+            <li><strong>POST_NOTIFICATIONS:</strong> отправка ежедневных мотивационных цитат и напоминаний.</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> автоматическое восстановление напоминаний и виджета после перезагрузки телефона.</li>
+            <li><strong>VIBRATE:</strong> виброотклик при поступлении напоминания.</li>
+            <li><strong>Фотопикер:</strong> официальный безопасный Photo Picker Android без доступа к памяти.</li>
+        </ul>
+
+        <h2>4. Никакой рекламы и сторонних трекеров</h2>
+        <p><strong>Cybro Technology</strong> не использует аналитические трекеры или рекламные сети. Данные не продаются и не передаются третьим сторонам.</p>
+
+        <h2>5. Контакты</h2>
+        <div class="meta-card">
+            <p><strong>Компания:</strong> Cybro Technology</p>
+            <p><strong>Ведущий разработчик:</strong> MD Ismail</p>
+            <p><strong>Официальная почта поддержки:</strong> <a href="mailto:cybrotechnology1@gmail.com">cybrotechnology1@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- 4. JAPANESE -->
+    <div id="lang-ja" class="policy-section">
+        <div class="highlight-card">
+            <span class="icon">🛡️</span>
+            <p><strong>安心の完全オフライン保証：</strong> <strong>Cybro Technology</strong> が提供する「Life Clock」は100%完全オフライン設計です。データが端末外部に送信されることは一切ありません。</p>
+        </div>
+
+        <h2>1. はじめに</h2>
+        <p><strong>MD Ismail</strong> が開発し、<strong>Cybro Technology</strong> が提供する <strong>Life Clock</strong>（ライフクロック）へようこそ。お客様の個人情報を尊重し、最高水準のプライバシー保護を維持します。</p>
+
+        <h2>2. 取り扱う情報とローカル保存</h2>
+        <p>正確な寿命統計や記念日カウントダウンのため、以下の情報を扱います：</p>
+        <ul>
+            <li><strong>基本プロフィール：</strong> お名前、生年月日、出生時刻。</li>
+            <li><strong>統計設定：</strong> 居住国、平均寿命指標。</li>
+            <li><strong>大切な人の情報：</strong> 登録されたご家族の名前と誕生日。</li>
+            <li><strong>アイコン画像：</strong> 端末から任意で選択された画像。</li>
+        </ul>
+        <p><strong>完全ローカル暗号化保存：</strong> すべての情報は端末内の Room SQLite データベースにのみ保存され、クラウドへ送られることはありません。</p>
+
+        <h2>3. 端末の権限設定</h2>
+        <ul>
+            <li><strong>POST_NOTIFICATIONS：</strong> 毎日の名言および誕生日通知のため。</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED：</strong> 端末再起動時にリマインダーとウィジェットを自動復元するため。</li>
+            <li><strong>VIBRATE：</strong> 通知受信時の振動のため。</li>
+            <li><strong>フォトピッカー：</strong> Android標準の安全なピッカーを採用。</li>
+        </ul>
+
+        <h2>4. 開発者および会社情報</h2>
+        <div class="meta-card">
+            <p><strong>企業名：</strong> Cybro Technology</p>
+            <p><strong>リード開発者：</strong> MD Ismail</p>
+            <p><strong>お問い合わせ：</strong> <a href="mailto:cybrotechnology1@gmail.com">cybrotechnology1@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- 5. KOREAN -->
+    <div id="lang-ko" class="policy-section">
+        <div class="highlight-card">
+            <span class="icon">🛡️</span>
+            <p><strong>오프라인 우선 개인정보 보장:</strong> <strong>Cybro Technology</strong>가 배포하는 Life Clock은 100% 오프라인 기반 애플리케이션입니다. 개인정보는 절대 외부 서버로 전송되지 않습니다.</p>
+        </div>
+
+        <h2>1. 개요</h2>
+        <p><strong>MD Ismail</strong>이 개발하고 <strong>Cybro Technology</strong>가 서비스하는 <strong>Life Clock</strong>을 이용해 주셔서 감사합니다. 당사는 사용자의 개인정보를 소중히 보호합니다.</p>
+
+        <h2>2. 데이터 수집 및 로컬 보관</h2>
+        <p>실시간 수명 시계 및 생일 디데이 기능을 위해 다음 데이터를 처리합니다:</p>
+        <ul>
+            <li><strong>사용자 정보:</strong> 성명, 생년월일, 출생 시각.</li>
+            <li><strong>통계 기준:</strong> 거주 국가 및 기대 수명.</li>
+            <li><strong>소중한 사람들:</strong> 등록된 가족의 이름과 생일.</li>
+            <li><strong>프로필 사진:</strong> 기기 갤러리에서 선택한 이미지.</li>
+        </ul>
+        <p><strong>기기 내 로컬 저장:</strong> 모든 데이터는 기기 내부의 안전한 Room SQLite 데이터베이스에만 저장됩니다.</p>
+
+        <h2>3. 개발사 및 문의 안내</h2>
+        <div class="meta-card">
+            <p><strong>회사명:</strong> Cybro Technology</p>
+            <p><strong>수석 개발자:</strong> MD Ismail</p>
+            <p><strong>공식 지원 이메일:</strong> <a href="mailto:cybrotechnology1@gmail.com">cybrotechnology1@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- 6. ARABIC (RTL) -->
+    <div id="lang-ar" class="policy-section rtl">
+        <div class="highlight-card">
+            <span class="icon">🛡️</span>
+            <p><strong>ضمان الخصوصية دون اتصال بالإنترنت:</strong> تطبيق Life Clock من شركة <strong>Cybro Technology</strong> يعمل محلياً بنسبة 100% بدون إنترنت. بياناتك الشخصية لا تخرج من هاتفك أبداً ولا يتم مشاركتها إطلاقاً.</p>
+        </div>
+
+        <h2>١. مقدمة</h2>
+        <p>مرحباً بك في تطبيق <strong>Life Clock</strong>، المطور بواسطة <strong>MD Ismail</strong> والمنشور من قبل <strong>Cybro Technology</strong>. نحن ملتزمون بحماية خصوصيتك بشكل كامل.</p>
+
+        <h2>٢. البيانات التي نستخدمها والتخزين المحلي</h2>
+        <p>لحساب إحصائيات العمر ومراحل الحياة وتذكيرات أعياد الميلاد، يتعامل التطبيق مع البيانات التالية محلياً:</p>
+        <ul>
+            <li><strong>البيانات الشخصية:</strong> الاسم، تاريخ الميلاد، ووقت الميلاد.</li>
+            <li><strong>المعايير:</strong> بلد الإقامة ومتوسط العمر المتوقع.</li>
+            <li><strong>بيانات العائلة:</strong> أسماء وأعياد ميلاد أفراد الأسرة المضافين.</li>
+            <li><strong>الصورة الشخصية:</strong> الصورة المختارة من معرض هاتفك.</li>
+        </ul>
+        <p><strong>عزل محلي كامل:</strong> تُحفظ جميع البيانات في قاعدة بيانات Room SQLite داخل هاتفك ولا يتم إرسالها لأي خادم سحابي.</p>
+
+        <h2>٣. معلومات المطور والشركة</h2>
+        <div class="meta-card">
+            <p><strong>الشركة:</strong> Cybro Technology</p>
+            <p><strong>المطور الرئيسي:</strong> MD Ismail</p>
+            <p><strong>البريد الإلكتروني الرسمي للدعم:</strong> <a href="mailto:cybrotechnology1@gmail.com">cybrotechnology1@gmail.com</a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Cybro Technology. Developed by MD Ismail. All rights reserved.
+    </div>
+</div>
+
+<script>
+    function switchLang(langCode, btnElement) {
+        const sections = document.querySelectorAll('.policy-section');
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        const targetSection = document.getElementById('lang-' + langCode);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+
+        if (btnElement) {
+            btnElement.classList.add('active');
+        }
+
+        const titles = {
+            en: "Privacy Policy",
+            zh: "隐私政策",
+            ru: "Политика конфиденциальности",
+            ja: "プライバシーポリシー",
+            ko: "개인정보 처리방침",
+            ar: "سياسة الخصوصية"
+        };
+        const dates = {
+            en: "Last Updated: September 18, 2026",
+            zh: "最近更新：2026年9月18日",
+            ru: "Последнее обновление: 18 сентября 2026 г.",
+            ja: "最終更新日：2026年9月18日",
+            ko: "최종 수정일: 2026년 9월 18일",
+            ar: "آخر تحديث: ١٨ سبتمبر ٢٠٢٦"
+        };
+
+        document.getElementById('main-title').innerText = titles[langCode] || titles.en;
+        document.getElementById('main-date').innerText = dates[langCode] || dates.en;
+    }
+</script>
+
+</body>
+</html>
